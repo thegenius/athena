@@ -1,0 +1,187 @@
+- {
+    caseName: 'executor selector test 1',
+    caseDesc: 'base execute',
+    planFilePath: 'logic/selector_test_1.yaml',
+    expected: [
+      {
+        name: "apply",
+        result: "TRUE",
+        state: "TRUE"
+      }
+    ]
+  }
+
+- {
+    caseName: 'executor selector test 2',
+    caseDesc: 'base execute',
+    planFilePath: 'logic/selector_test_2.yaml',
+    expected: [
+      {
+        name: "apply",
+        result: "MEANINGLESS",
+        state: "INIT"
+      },
+      {
+        name: "setNext",
+        result: "FALSE",
+        state: "FALSE"
+      },
+      {
+        name: "sendTo",
+        result: "TRUE",
+        state: "TRUE"
+      }
+    ]
+  }
+
+- {
+    caseName: 'executor sequence test 1',
+    caseDesc: 'base execute',
+    planFilePath: 'logic/sequence_test_1.yaml',
+    expected: [
+      {
+        name: "apply",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "setNext",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "sendTo",
+        result: "TRUE",
+        state: "TRUE"
+      }
+    ]
+  }
+
+- {
+    caseName: 'executor sequence test 2',
+    caseDesc: 'base execute',
+    planFilePath: 'logic/sequence_test_2.yaml',
+    expected: [
+      {
+        name: "apply",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "setNext",
+        result: "FALSE",
+        state: "FALSE"
+      }
+    ]
+  }
+
+- {
+    caseName: 'executor complicate test 1',
+    caseDesc: 'base execute',
+    planFilePath: 'logic/complicate_test_1.yaml',
+    expected: [
+      {
+        name: "noarg",
+        result: "MEANINGLESS",
+        state: "INIT"
+      },
+      {
+        name: "apply",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "setNext",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "sendTo",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "checkEntity",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: 'has permission',
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: agree,
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: 'send to permission',
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: 'has permission',
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: pass,
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: 'cancel from permission',
+        result: 'TRUE',
+        state: 'TRUE',
+      }
+    ]
+  }
+
+- {
+    caseName: 'executor complicate test 2',
+    caseDesc: 'base execute',
+    planFilePath: 'logic/complicate_test_2.yaml',
+    expected: [
+      {
+        name: "apply",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "setNext",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "sendTo",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: "checkEntity",
+        result: "TRUE",
+        state: "TRUE"
+      },
+      {
+        name: 'has permission',
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: agree,
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: 'send to permission',
+        result: 'TRUE',
+        state: 'TRUE',
+      },
+      {
+        name: 'has permission',
+        result: 'FALSE',
+        state: 'FALSE',
+      }
+    ]
+  }

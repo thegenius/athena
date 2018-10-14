@@ -1,0 +1,78 @@
+{sequence: [
+  sequence: [
+    {
+          name: 'apply',
+          condition: "hasPermission",
+          hasPermission: {arg: {arg1: 25, arg2: 'hello function'}},
+          action: "applyVacation",
+          applyVacation: {arg: {arg1: 23, arg2: 'hello function'}},
+    },
+    {
+        name: 'setNext',
+        action: "setNextEntity",
+        setNextEntity: {arg: {entityId: 9527}}
+    },
+    {
+        name: 'sendTo',
+        action: sendToEntity,
+        sendToEntity: {arg: {entityId: 9527}}
+    }
+  ],
+  sequence: [
+    {
+      name: checkEntity,
+      action: checkEntityId,
+      checkEntityId: {arg: {entityId: 9527}}
+    },
+    {
+      name: 'has permission',
+      action: hasPermission,
+      hasPermission: {arg: {arg1: 25}}
+    },
+    selector: [
+      sequence: [
+        {
+          name: 'agree',
+          action: agree,
+          agree: {arg: {entityId: 9527}}},
+        {
+          name: 'send to permission',
+          action: sendToPermission,
+          sendToPermission: {arg: {entityId: 9527}}
+        }
+      ],
+      {
+        name: 'disagree',
+        action: disagree,
+        disagree: {arg: {entityId: 9527}}
+      },
+    ]
+  ],
+  sequence: [
+    {
+      name: 'has permission',
+      action: hasPermission,
+      hasPermission: {arg: {arg1: 27}}
+    },
+    selector: [
+      sequence: [
+        {
+          name: 'pass',
+          action: pass,
+          pass: {arg: {entityId: 9527}}
+        },
+        {
+          name: 'cancel from permission',
+          action: cancelFromPermission,
+          cancelFromPermission: {arg: {entityId: 9527}}
+        }
+      ],
+      {
+        name: 'reject',
+        action: reject,
+        reject: {arg: {entityId: 9527}}
+      }
+    ]
+  ]
+]
+}

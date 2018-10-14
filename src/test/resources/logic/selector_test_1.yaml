@@ -1,0 +1,21 @@
+{
+selector: [
+  {
+    name: 'apply',
+    condition: "hasPermission",
+    hasPermission: {arg: {arg1: 25, arg2: 'hello function'}},
+    action: "applyVacation",
+    applyVacation: {arg: {arg1: 23, arg2: 'hello function'}},
+  },
+  {
+    name: 'setNext',
+    action: "setNextEntity",
+    setNextEntity: {arg: {entityId: 9501}}
+  },
+  {
+    name: 'sendTo',
+    action: sendToEntity,
+    sendToEntity: {arg: {entityId: 9527}}
+  }
+]
+}
