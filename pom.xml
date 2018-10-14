@@ -28,8 +28,8 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/thegenius/LogicWeaver</url>
-        <connection>git@github.com:thegenius/LogicWeaver.git</connection>
+        <url>https://github.com/thegenius/athena</url>
+        <connection>git@github.com:thegenius/athena.git</connection>
         <developerConnection>https://www.lvonce.com</developerConnection>
     </scm>
 
